@@ -1,0 +1,86 @@
+{
+  "cameras": [
+    {
+      "id": "CAM-01",
+      "name": "Главный вход",
+      "location": "1 этаж",
+      "status": "online",
+      "previewUrl": "http://localhost:8888/cam1",
+      "updatedAt": "2026-11-11T09:00:00Z"
+    },
+    {
+      "id": "CAM-02",
+      "name": "Лаборатория",
+      "location": "2 этаж",
+      "status": "online",
+      "previewUrl": "",
+      "updatedAt": "2026-11-11T09:00:00Z"
+    },
+    {
+      "id": "CAM-05",
+      "name": "Серверная",
+      "location": "1 этаж",
+      "status": "offline",
+      "previewUrl": "",
+      "updatedAt": "2026-11-11T09:00:00Z"
+    },
+    {
+      "id": "CAM-07",
+      "name": "Парковка",
+      "location": "улица",
+      "status": "online",
+      "previewUrl": "",
+      "updatedAt": "2026-11-11T09:00:00Z"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "motion",
+      "cameraId": "CAM-01",
+      "severity": "medium",
+      "message": "Обнаружено движение",
+      "createdAt": "2026-11-11T09:05:00Z"
+    },
+    {
+      "id": 2,
+      "type": "camera_offline",
+      "cameraId": "CAM-05",
+      "severity": "high",
+      "message": "Камера ушла offline",
+      "createdAt": "2026-11-11T09:10:00Z"
+    },
+    {
+      "id": 3,
+      "type": "door_open",
+      "cameraId": "CAM-01",
+      "severity": "low",
+      "message": "Открыта дверь главного входа",
+      "createdAt": "2026-11-11T09:15:00Z"
+    }
+  ],
+  "incidents": [
+    {
+      "id": 1762851000001,
+      "title": "Камера Серверной недоступна",
+      "cameraId": "CAM-05",
+      "severity": "high",
+      "description": "CAM-05 не отвечает с 09:10",
+      "status": "in_progress",
+      "assignee": "Operator-01",
+      "createdAt": "2026-11-11T09:12:00Z",
+      "updatedAt": "2026-11-11T09:20:00Z"
+    },
+    {
+      "id": 1762851000002,
+      "title": "Движение у главного входа ночью",
+      "cameraId": "CAM-01",
+      "severity": "medium",
+      "description": "Событие motion вне расписания",
+      "status": "new",
+      "assignee": null,
+      "createdAt": "2026-11-11T09:06:00Z",
+      "updatedAt": "2026-11-11T09:06:00Z"
+    }
+  ]
+}
