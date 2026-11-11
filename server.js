@@ -133,6 +133,12 @@ app.patch("/api/incidents/:id", (req, res) => {
     return res.status(404).json({ error: "Incident not found" });
   }
 
+  const allowed = ["new", "in_progress", "resolved"];
+
+  if (req.body.status && !allowed.includes(req.body.status)) {
+    return res.status(400).json({ error: "Invalid incident status" });
+  }
+
   Object.assign(incident, req.body, { updatedAt: new Date().toISOString() });
   writeDB(db);
   res.json(incident);
