@@ -1,6 +1,7 @@
 const cameraList = document.querySelector("#cameraList");
 const incidentList = document.querySelector("#incidentList");
 const statusFilter = document.querySelector("#statusFilter");
+const severityFilter = document.querySelector("#severityFilter");
 
 async function api(url, options = {}) {
   const response = await fetch(url, {
@@ -36,8 +37,12 @@ async function loadCameras() {
 }
 
 async function loadIncidents() {
-  const status = statusFilter.value;
-  const url = status ? `/api/incidents?status=${status}` : "/api/incidents";
+  const params = new URLSearchParams();
+  if (statusFilter.value) params.set("status", statusFilter.value);
+  if (severityFilter.value) params.set("severity", severityFilter.value);
+
+  const qs = params.toString();
+  const url = qs ? `/api/incidents?${qs}` : "/api/incidents";
   const incidents = await api(url);
 
   if (incidents.length === 0) {
@@ -64,6 +69,7 @@ async function setStatus(id, status) {
 }
 
 statusFilter.addEventListener("change", loadIncidents);
+severityFilter.addEventListener("change", loadIncidents);
 
 async function start() {
   try {
