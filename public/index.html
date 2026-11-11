@@ -21,12 +21,20 @@
     <section>
       <div class="toolbar">
         <h2>Инциденты</h2>
-        <select id="statusFilter">
-          <option value="">Все статусы</option>
-          <option value="new">New</option>
-          <option value="in_progress">In Progress</option>
-          <option value="resolved">Resolved</option>
-        </select>
+        <div>
+          <select id="statusFilter">
+            <option value="">Все статусы</option>
+            <option value="new">New</option>
+            <option value="in_progress">In Progress</option>
+            <option value="resolved">Resolved</option>
+          </select>
+          <select id="severityFilter">
+            <option value="">Все приоритеты</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
       </div>
       <div id="incidentList"></div>
     </section>
