@@ -66,10 +66,10 @@
       "cameraId": "CAM-05",
       "severity": "high",
       "description": "CAM-05 не отвечает с 09:10",
-      "status": "in_progress",
+      "status": "closed",
       "assignee": "Operator-01",
       "createdAt": "2026-11-11T09:12:00Z",
-      "updatedAt": "2026-11-11T09:20:00Z"
+      "updatedAt": "2026-11-11T15:48:26.066Z"
     },
     {
       "id": 1762851000002,
